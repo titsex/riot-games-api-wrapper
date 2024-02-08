@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "NodeNext",
+    "target": "ES2022",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "strict": true,
+    "noEmit": true,
+    "rootDir": "src",
+    "skipLibCheck": true,
+    "paths": {
+      "@constant": ["./src/constant.ts"],
+      "@fetcher": ["./src/fetcher.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
