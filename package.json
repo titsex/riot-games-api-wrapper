@@ -1,9 +1,13 @@
 {
   "name": "riot-games-api-wrapper",
-  "description": "Lightweight wrapper on the riot games api.",
+  "description": "Lightweight wrapper on the riot games api",
   "author": "titsex",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
+  "homepage": "https://github.com/titsex/riot-games-api-wrapper#readme",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": "./dist/index.mjs",
   "keywords": [
     "riot",
     "games",
@@ -12,14 +16,18 @@
     "league",
     "legends"
   ],
-  "main": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
-  "exports": "./dist/index.mjs",
   "files": [
     "dist"
   ],
   "directories": {
     "lib": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/titsex/riot-games-api-wrapper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/titsex/riot-games-api-wrapper/issues"
   },
   "scripts": {
     "build": "tsup",

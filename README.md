@@ -1,21 +1,18 @@
 # riot-games-api-wrapper
- The purest wrapper over the riot games api.
-
+>The purest wrapper over the riot games api
 # Feature
-| game              | api           | status          | ☑️ |
-|-------------------|---------------|-----------------|----|
-| league of legends | ACCOUNT-V1    | implemented     | ✅  |
-| league of legends | CHAMPION-V3   | implemented     | ✅  |
-| league of legends | CLASH-V1      | implemented     | ✅  |
-| league of legends | LEAGUE-EXP-V4 | implemented     | ✅  |
-| league of legends | LEAGUE-V4     | implemented     | ✅  |
-| league of legends | LOL-STATUS-V4 | implemented     | ✅  |
-| league of legends | MATCH-V5      | not implemented | ❌  |
-| league of legends | SPECTATOR-V4  | not implemented | ❌  |
-| league of legends | SUMMONER-V4   | implemented     | ✅  |
-
+| product           | api           | ☑️ |
+|-------------------|---------------|----|
+| Riot Games        | ACCOUNT-V1    | ✅  |
+| League of Legends | CHAMPION-V3   | ✅  |
+| League of Legends | CLASH-V1      | ✅  |
+| League of Legends | LEAGUE-EXP-V4 | ✅  |
+| League of Legends | LEAGUE-V4     | ✅  |
+| League of Legends | LOL-STATUS-V4 | ✅  |
+| League of Legends | MATCH-V5      | ❌  |
+| League of Legends | SPECTATOR-V4  | ❌  |
+| League of Legends | SUMMONER-V4   | ✅  |
 # Using
-
 ```typescript
 import RiotGamesAPI, { RiotGamesAccountRegion } from 'riot-games-api-wrapper'
 
@@ -36,7 +33,6 @@ riot.lol.status.get()
     .then(console.log)
     .catch(console.error)
 ```
-
 # Documentation
 ### RiotGamesAPI[RiotGamesAPIOptions]
 * ```token``` is required, to get it, follow the [Riot Developer Portal](https://developer.riotgames.com)
