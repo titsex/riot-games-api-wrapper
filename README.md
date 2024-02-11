@@ -16,15 +16,23 @@
 
 # Using
 
-```ts
-import RiotGamesAPI from 'riot-games-api-wrapper'
+```typescript
+import RiotGamesAPI, { RiotGamesAccountRegion } from 'riot-games-api-wrapper'
 
-const api = new RiotGamesAPI({
+const riot = new RiotGamesAPI({
     token: 'riot games api token',
     region: 'kr'
 })
 
-api.summoner.getByName('titseх')
+riot.account.getByNameAndTag(
+    'titseх',
+    'snake',
+    RiotGamesAccountRegion.EUROPE
+)
+    .then(console.log)
+    .catch(console.error)
+
+riot.lol.status.get()
     .then(console.log)
     .catch(console.error)
 ```

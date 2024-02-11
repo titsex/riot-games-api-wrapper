@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "paths": {
       "@constant": ["./src/constant.ts"],
-      "@fetcher": ["./src/fetcher.ts"]
+      "@fetcher": ["./src/fetcher.ts"],
+      "@api/*": ["./src/api/*"]
     }
   },
   "include": ["src/**/*.ts"],

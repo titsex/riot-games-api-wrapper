@@ -1,17 +1,25 @@
-import Fetcher from '@fetcher'
+export const LeagueOfLegendsClashPlayerPosition = {
+    UNSELECTED: 'UNSELECTED',
+    FILL: 'FILL',
+    TOP: 'TOP',
+    JUNGLE: 'JUNGLE',
+    MIDDLE: 'MIDDLE',
+    BOTTOM: 'BOTTOM',
+    UTILITY: 'UTILITY',
+} as const
 
-/**
- * The position of the player that he has selected on the Clash tab.
- */
-export type ClashPlayerPosition = 'UNSELECTED' | 'FILL' | 'TOP' | 'JUNGLE' | 'MIDDLE' | 'BOTTOM' | 'UTILITY'
+type LeagueOfLegendsClashPlayerPositionType =
+    (typeof LeagueOfLegendsClashPlayerPosition)[keyof typeof LeagueOfLegendsClashPlayerPosition]
 
-/**
- * The role of the player in the Clash team. He either created this team and is the captain,
- * or he was invited and is a simple member of the team.
- */
-export type ClashPlayerRole = 'CAPTAIN' | 'MEMBER'
+export const LeagueOfLegendsClashPlayerRole = {
+    CAPTAIN: 'CAPTAIN',
+    MEMBER: 'MEMBER',
+} as const
 
-export interface ClashPlayer {
+type LeagueOfLegendsClashPlayerRoleType =
+    (typeof LeagueOfLegendsClashPlayerRole)[keyof typeof LeagueOfLegendsClashPlayerRole]
+
+export interface LeagueOfLegendsClashPlayer {
     /**
      * The unique ID of the summoner.
      */
@@ -25,15 +33,15 @@ export interface ClashPlayer {
     /**
      * The position of the player in the Clash.
      */
-    position: ClashPlayerPosition
+    position: LeagueOfLegendsClashPlayerPositionType
 
     /**
      * The role of the player in the team.
      */
-    role: ClashPlayerRole
+    role: LeagueOfLegendsClashPlayerRoleType
 }
 
-export interface ClashTeam {
+export interface LeagueOfLegendsClashTeam {
     /**
      * The ID of the Clash team.
      */
@@ -72,10 +80,10 @@ export interface ClashTeam {
     /**
      * The players of the Clash team.
      */
-    players: ClashPlayer[]
+    players: LeagueOfLegendsClashPlayer[]
 }
 
-export interface ClashTournament {
+export interface LeagueOfLegendsClashTournament {
     /**
      * Tournament ID.
      */
@@ -99,10 +107,10 @@ export interface ClashTournament {
     /**
      * The schedule of the Clash tournament.
      */
-    schedule: ClashTournamentSchedule[]
+    schedule: LeagueOfLegendsClashTournamentSchedule[]
 }
 
-export interface ClashTournamentSchedule {
+interface LeagueOfLegendsClashTournamentSchedule {
     /**
      * The ID of the Clash tournament schedule.
      */
@@ -123,29 +131,3 @@ export interface ClashTournamentSchedule {
      */
     cancelled: boolean
 }
-
-class CLASHV1 {
-    constructor(private readonly fetcher: Fetcher) {}
-
-    async getPlayersBySummonerId(summonerId: string): Promise<ClashPlayer[]> {
-        return await this.fetcher.get<ClashPlayer[]>(`lol/clash/v1/players/by-summoner/${summonerId}`)
-    }
-
-    async getTeamById(teamId: string): Promise<ClashTeam> {
-        return await this.fetcher.get<ClashTeam>(`lol/clash/v1/teams/${teamId}`)
-    }
-
-    async getTournaments(): Promise<ClashTournament[]> {
-        return await this.fetcher.get<ClashTournament[]>(`lol/clash/v1/tournaments`)
-    }
-
-    async getTournamentByTeamId(teamId: string): Promise<ClashTournament> {
-        return await this.fetcher.get<ClashTournament>(`lol/clash/v1/tournaments/by-team/${teamId}`)
-    }
-
-    async getTournamentById(tournamentId: string): Promise<ClashTournament> {
-        return await this.fetcher.get<ClashTournament>(`lol/clash/v1/tournaments/${tournamentId}`)
-    }
-}
-
-export default CLASHV1

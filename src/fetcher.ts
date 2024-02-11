@@ -1,5 +1,4 @@
-import { RIOT_GAMES_API_URL } from '@constant'
-import { RiotGamesAPIOptions } from './index'
+import { RiotGamesAPIOptions } from './types'
 
 export class RiotGamesAPIBadResponseException extends Error {
     constructor(
@@ -13,10 +12,13 @@ export class RiotGamesAPIBadResponseException extends Error {
 }
 
 class Fetcher {
-    constructor(private readonly options: RiotGamesAPIOptions) {}
+    constructor(
+        private readonly options: RiotGamesAPIOptions,
+        private readonly apiUrl: string
+    ) {}
 
     async get<T>(url: string, region?: string) {
-        const response = await fetch(`https://${region || this.options.region}.${RIOT_GAMES_API_URL}/${url}`, {
+        const response = await fetch(`https://${region || this.options.region}.${this.apiUrl}/${url}`, {
             headers: {
                 'X-Riot-Token': this.options.token,
             },

@@ -1,6 +1,4 @@
-import Fetcher from '@fetcher'
-
-export interface ChampionRotation {
+export interface LeagueOfLegendsChampionRotation {
     /**
      * List of ids of champions available for free.
      */
@@ -18,13 +16,3 @@ export interface ChampionRotation {
      */
     maxNewPlayerLevel: number
 }
-
-class CHAMPIONV3 {
-    constructor(private readonly fetcher: Fetcher) {}
-
-    async getRotations(): Promise<ChampionRotation> {
-        return await this.fetcher.get<ChampionRotation>(`lol/platform/v3/champion-rotations`)
-    }
-}
-
-export default CHAMPIONV3
