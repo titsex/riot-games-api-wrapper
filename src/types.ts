@@ -1,3 +1,15 @@
+export const RiotGamesDataRegion = {
+    AMERICAS: 'AMERICAS',
+    ASIA: 'ASIA',
+    EUROPE: 'EUROPE',
+    ESPORTS: 'ESPORTS',
+} as const
+
+/**
+ * The region of the Riot Games accounts.
+ */
+export type RiotGamesRegionDataType = (typeof RiotGamesDataRegion)[keyof typeof RiotGamesDataRegion]
+
 export interface RiotGamesAPIOptions {
     /**
      * Riot Games API token which can be obtained by following the link: https://developer.riotgames.com

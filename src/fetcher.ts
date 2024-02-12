@@ -1,4 +1,4 @@
-import { RiotGamesAPIOptions } from './types'
+import { RiotGamesAPIOptions } from '@types'
 
 export class RiotGamesAPIBadResponseException extends Error {
     constructor(

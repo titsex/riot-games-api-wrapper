@@ -119,12 +119,12 @@ interface LeagueOfLegendsClashTournamentSchedule {
     /**
      * Time of registration for the Clash tournament.
      */
-    registrationTime: number
+    registrationTime: bigint
 
     /**
      * The start time of the Clash tournament.
      */
-    startTime: number
+    startTime: bigint
 
     /**
      * The cancellation status of the Clash tournament.

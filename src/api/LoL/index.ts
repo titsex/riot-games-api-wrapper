@@ -7,6 +7,7 @@ import LeagueOfLegendsChampionApi from '@api/LoL/CHAMPION-V3'
 import LeagueOfLegendsSummonerApi from '@api/LoL/SUMMONER-V4'
 import LeagueOfLegendsLeagueApi from '@api/LoL/LEAGUE-V4'
 import LeagueOfLegendsClashApi from '@api/LoL/CLASH-V1'
+import LeagueOfLegendsMatchApi from '@api/LoL/MATCH-V5'
 
 export default class LeagueOfLegendsApi {
     public status: LeagueOfLegendsPlatformStatusApi
@@ -16,6 +17,7 @@ export default class LeagueOfLegendsApi {
     public summoner: LeagueOfLegendsSummonerApi
     public league: LeagueOfLegendsLeagueApi
     public clash: LeagueOfLegendsClashApi
+    public match: LeagueOfLegendsMatchApi
 
     constructor(private readonly fetcher: Fetcher) {
         this.status = new LeagueOfLegendsPlatformStatusApi(this.fetcher)
@@ -25,5 +27,6 @@ export default class LeagueOfLegendsApi {
         this.summoner = new LeagueOfLegendsSummonerApi(this.fetcher)
         this.league = new LeagueOfLegendsLeagueApi(this.fetcher)
         this.clash = new LeagueOfLegendsClashApi(this.fetcher)
+        this.match = new LeagueOfLegendsMatchApi(this.fetcher)
     }
 }

@@ -30,7 +30,7 @@ export interface LeagueOfLegendsSummoner {
      * profile icon change, playing the tutorial or advanced tutorial,
      * finishing a game, summoner name change
      */
-    revisionDate: number
+    revisionDate: bigint
 
     /**
      * The summoner's level.

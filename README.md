@@ -9,7 +9,7 @@
 | League of Legends | LEAGUE-EXP-V4 | ✅  |
 | League of Legends | LEAGUE-V4     | ✅  |
 | League of Legends | LOL-STATUS-V4 | ✅  |
-| League of Legends | MATCH-V5      | ❌  |
+| League of Legends | MATCH-V5      | ✅  |
 | League of Legends | SPECTATOR-V4  | ✅  |
 | League of Legends | SUMMONER-V4   | ✅  |
 # Using

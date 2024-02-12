@@ -1,15 +1,3 @@
-export const RiotGamesAccountRegion = {
-    AMERICAS: 'AMERICAS',
-    ASIA: 'ASIA',
-    EUROPE: 'EUROPE',
-    ESPORTS: 'ESPORTS',
-} as const
-
-/**
- * The region of the Riot Games accounts.
- */
-export type RiotGamesAccountRegion = (typeof RiotGamesAccountRegion)[keyof typeof RiotGamesAccountRegion]
-
 /**
  * Information about the Riot Games account.
  */

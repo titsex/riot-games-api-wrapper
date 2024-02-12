@@ -36,7 +36,7 @@ interface LeagueOfLegendsSpectatorParticipant {
 export interface LeagueOfLegendsSpectatorCurrentGame {
     gameId: number
     gameType: string
-    gameStartTime: number
+    gameStartTime: bigint
     mapId: number
     gameLength: number
     platformId: string

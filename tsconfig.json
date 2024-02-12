@@ -11,7 +11,8 @@
     "paths": {
       "@constant": ["./src/constant.ts"],
       "@fetcher": ["./src/fetcher.ts"],
-      "@api/*": ["./src/api/*"]
+      "@api/*": ["./src/api/*"],
+      "@types": ["./src/types"]
     }
   },
   "include": ["src/**/*.ts"],
