@@ -1,35 +1,38 @@
 import Fetcher from '@fetcher'
 
+import LeagueOfLegendsAPI from 'league-of-legends-api-wrapper'
 import RiotGamesAccountApi from '@api/ACCOUNT-V1'
-import LeagueOfLegendsApi from '@api/LoL'
 
-import { RiotGamesAPIOptions } from '@types'
+import { RiotGamesAPIOptions, RiotGamesProduct } from '@types'
 
 class RiotGamesAPI {
     private readonly url = 'api.riotgames.com'
 
-    public account: RiotGamesAccountApi
+    public account!: RiotGamesAccountApi
 
-    public lol: LeagueOfLegendsApi
+    public lol!: LeagueOfLegendsAPI
 
-    constructor(options: RiotGamesAPIOptions) {
-        const fetcher = new Fetcher(options, this.url)
+    constructor(options: RiotGamesAPIOptions | RiotGamesAPIOptions[]) {
+        const fetcher = new Fetcher(Array.isArray(options) ? options[0] : options, this.url)
 
         this.account = new RiotGamesAccountApi(fetcher)
 
-        this.lol = new LeagueOfLegendsApi(fetcher)
+        if (Array.isArray(options)) {
+            for (const option of options) {
+                switch (option.product) {
+                    case RiotGamesProduct.LeagueOfLegends: {
+                        this.lol = new LeagueOfLegendsAPI(option)
+                        break
+                    }
+                    default: {
+                        throw new Error('Specify the correct Riot Games product')
+                    }
+                }
+            }
+        }
     }
 }
 
-export {
-    LeagueOfLegendsGameMode,
-    LeagueOfLegendsBaseRank,
-    LeagueOfLegendsHighRank,
-    LeagueOfLegendsRank,
-} from '@api/LoL/types'
-
-export { LeagueOfLegendsClashPlayerRole, LeagueOfLegendsClashPlayerPosition } from '@api/LoL/CLASH-V1/types'
-export { LeagueOfLegendsMatchQueue } from '@api/LoL/MATCH-V5/types'
 export { RiotGamesDataRegion } from '@types'
 
 export default RiotGamesAPI

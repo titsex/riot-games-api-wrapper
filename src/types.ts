@@ -10,6 +10,12 @@ export const RiotGamesDataRegion = {
  */
 export type RiotGamesRegionDataType = (typeof RiotGamesDataRegion)[keyof typeof RiotGamesDataRegion]
 
+export const RiotGamesProduct = {
+    LeagueOfLegends: 'LeagueOfLegends',
+} as const
+
+export type RiotGamesProductType = (typeof RiotGamesProduct)[keyof typeof RiotGamesProduct]
+
 export interface RiotGamesAPIOptions {
     /**
      * Riot Games API token which can be obtained by following the link: https://developer.riotgames.com
@@ -20,6 +26,8 @@ export interface RiotGamesAPIOptions {
      * The API region where the requests will be sent.
      */
     region: RiotGamesAPIRegion
+
+    product?: RiotGamesProductType
 }
 
 export type RiotGamesAPIRegion =
