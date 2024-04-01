@@ -2,7 +2,7 @@
     "name": "riot-games-api-wrapper",
     "description": "Lightweight wrapper on the riot games api",
     "author": "titsex",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "license": "MIT",
     "homepage": "https://github.com/titsex/riot-games-api-wrapper#readme",
     "main": "./dist/index.js",
