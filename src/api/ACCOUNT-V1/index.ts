@@ -1,7 +1,7 @@
 import Fetcher from '@fetcher'
 
-import { RiotGamesAccount } from '@api/ACCOUNT-V1/types'
 import { RiotGamesRegionDataType } from '@types'
+import { RiotGamesAccount } from './types.js'
 
 export default class RiotGamesAccountApi {
     constructor(private readonly fetcher: Fetcher) {}

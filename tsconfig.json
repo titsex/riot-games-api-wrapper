@@ -9,10 +9,10 @@
         "rootDir": "src",
         "skipLibCheck": true,
         "paths": {
-            "@constant": ["./src/constant.ts"],
-            "@fetcher": ["./src/fetcher.ts"],
-            "@api/*": ["./src/api/*"],
-            "@types": ["./src/types"]
+            "@constant": ["./src/constant.js"],
+            "@fetcher": ["./src/fetcher.js"],
+            "@api/*": ["./src/api/*/index.js"],
+            "@types": ["./src/types.js"]
         }
     },
     "include": ["src/**/*.ts"],

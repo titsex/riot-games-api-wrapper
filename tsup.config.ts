@@ -5,5 +5,5 @@ export default defineConfig({
     clean: true,
     dts: true,
     target: 'es2022',
-    format: 'cjs',
+    format: 'esm',
 })

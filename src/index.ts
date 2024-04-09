@@ -33,6 +33,11 @@ class RiotGamesAPI {
     }
 }
 
+const riot = new RiotGamesAPI({
+    region: 'ru',
+    token: 'RGAPI-db35f3c2-582f-4fa9-b2a4-975c8cf4f82e',
+})
+
 export { RiotGamesDataRegion } from '@types'
 
 export default RiotGamesAPI
